@@ -5,9 +5,9 @@ require 'capistrano/precompile_chooser/version'
 Gem::Specification.new do |s|
   s.name        = 'capistrano-precompile-chooser'
   s.version     =  Capistrano::PrecompileChooser::VERSION
-  s.author	= "Weston Ganger"
-  s.email       = 'weston@westonganger.com'
-  s.homepage 	= 'https://github.com/westonganger/capistrano-precompile-chooser'
+  s.author	= "Lara Ferroni"
+  s.email       = 'lara@project529.com'
+  s.homepage 	= 'https://github.com/project529/capistrano-precompile-chooser'
   
   s.summary     = "Capistrano plugin to precompile your Rails assets locally, remotely, or not at all provided with a very convenient default terminal prompt."
 
