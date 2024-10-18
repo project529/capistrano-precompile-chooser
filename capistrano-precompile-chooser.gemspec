@@ -1,13 +1,27 @@
-  # capistrano-precompile-chooser.gemspec
-  Gem::Specification.new do |s|
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'capistrano/precompile_chooser/version'
+
+Gem::Specification.new do |s|
   s.name        = 'capistrano-precompile-chooser'
-  s.version     = '0.9.3'  # or whatever version you're on
-  s.summary     = "Capistrano Precompile Chooser"
-  s.description = "Forked version that works with ruby 3.3.1"
-  s.authors     = ["Lara Ferroni"]
+  s.version     =  Capistrano::PrecompileChooser::VERSION
+  s.author	= "Lara Ferroni"
   s.email       = 'lara@project529.com'
-  s.files       = Dir["{lib}/**/*", "README.md", "LICENSE"]
-  s.homepage    = 'https://github.com/project529/capistrano-precompile-chooser'
-  s.license     = 'MIT'
-  s.add_dependency 'capistrano', '>= 3.0'
+  s.homepage 	= 'https://github.com/project529/capistrano-precompile-chooser'
+  
+  s.summary     = "Capistrano plugin to precompile your Rails assets locally, remotely, or not at all provided with a very convenient default terminal prompt."
+
+  s.description = s.summary 
+
+  s.files = Dir.glob("{lib/**/*}") + %w{ LICENSE README.md Rakefile CHANGELOG.md }
+  s.require_path = 'lib'
+
+  s.required_ruby_version = '>= 1.9.3'
+
+  s.add_dependency "capistrano", ">= 3.1"
+  
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'bundler'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'capistrano-spec'
 end
